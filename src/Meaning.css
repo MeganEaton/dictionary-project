@@ -1,0 +1,13 @@
+.Meaning h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.Meaning p {
+  padding: 0 20px;
+  font-size: 16px;
+}
+.Meaning em {
+  font-size: 14px;
+  padding: 0 20px;
+  display: block;
+}
