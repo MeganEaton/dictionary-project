@@ -14,7 +14,7 @@ export default function App() {
         This app was made by{" "}
         <a href="https://www.meganeaton.me" target="_blank" rel="noreferrer">
           Megan Eaton
-        </a>
+        </a>{" "}
         and the code can be viewed{" "}
         <a
           href="https://github.com/MeganEaton/dictionary-project"
