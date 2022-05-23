@@ -1,14 +1,17 @@
 import React from "react";
 import "./App.css";
+import logo from "./logo.png";
 
 import Dictionary from "./Dictionary.js";
 
 export default function App() {
   return (
     <div className="App container">
-      <header className="App-header">Dictionary App</header>
+      <header className="App-header">
+        <img src={logo} className="App-logo img-fluid" alt="logo"></img>
+      </header>
       <main>
-        <Dictionary />
+        <Dictionary defaultKeyword="bird" />
       </main>
       <footer>
         This app was made by{" "}

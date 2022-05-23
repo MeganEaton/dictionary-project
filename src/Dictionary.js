@@ -4,9 +4,10 @@ import Results from "./Results.js";
 
 import "./Dictionary.css";
 
-export default function Dictionary() {
-  let [keyword, setKeyword] = useState(" ");
+export default function Dictionary(props) {
+  let [keyword, setKeyword] = useState(props.defaultKeyword);
   let [results, setResults] = useState(null);
+  let [loaded, setLoaded] = useState(false);
 
   function handleKeywordChange(event) {
     event.preventDefault();
@@ -15,21 +16,44 @@ export default function Dictionary() {
   function handleResponse(response) {
     setResults(response.data[0]);
   }
-
-  //api from https://dictionaryapi.dev/
-
-  function search(event) {
-    event.preventDefault();
+  function load() {
+    setLoaded(true);
+    search();
+  }
+  function search() {
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
     axios.get(apiUrl).then(handleResponse);
   }
-  return (
-    <div className="Dictionary">
-      <form onSubmit={search}>
-        <input type="search" onChange={handleKeywordChange} />
-        <input type="submit" value="Search" />
-      </form>
-      <Results results={results} />
-    </div>
-  );
+  //api from https://dictionaryapi.dev/
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  if (loaded) {
+    return (
+      <div className="Dictionary">
+        <section>
+          <h1>What would you like to search?</h1>
+          <form onSubmit={handleSubmit}>
+            <input
+              className="sarchSearchbar"
+              type="search"
+              onChange={handleKeywordChange}
+              placeholder={keyword}
+            />
+            <input className="searchSubmit" type="submit" value="Search" />
+          </form>
+          <div className="hint">
+            Some sugested words: "game", "snow", "sunset", "book"
+          </div>
+        </section>
+        <Results results={results} />
+      </div>
+    );
+  } else {
+    load();
+    return "Loading...";
+  }
 }

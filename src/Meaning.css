@@ -1,13 +1,18 @@
 .Meaning h3 {
-  font-size: 20px;
+  font-size: 25px;
   margin-bottom: 15px;
+  line-height: 1.5;
+  color: #5b5a76;
 }
-.Meaning p {
-  padding: 0 20px;
+
+.Meaning .meaningDefinition {
+  line-height: 1.5;
   font-size: 16px;
+  margin-left: 5px;
 }
-.Meaning em {
-  font-size: 14px;
-  padding: 0 20px;
-  display: block;
+.Meaning .meaningExample {
+  opacity: 0.8;
+  font-size: 13px;
+  font-style: italic;
+  margin-left: 15px;
 }
