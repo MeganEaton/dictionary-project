@@ -1,0 +1,9 @@
+.Photos .row {
+  padding-top: 15px;
+}
+
+.Photos img {
+  max-width: 100%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
