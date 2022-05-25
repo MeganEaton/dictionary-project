@@ -57,7 +57,7 @@ export default function Dictionary(props) {
             <input className="searchSubmit" type="submit" value="Search" />
           </form>
           <div className="hint">
-            Some sugested words: "game", "snow", "sunset", "book"
+            Some sugested words: "mountain", "dog", "sunset", "book"
           </div>
         </section>
         <Results results={results} />
